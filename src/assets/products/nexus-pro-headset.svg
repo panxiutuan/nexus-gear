@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#0f1218"/>
+    </linearGradient>
+    <linearGradient id="earcup" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a4050"/>
+      <stop offset="100%" style="stop-color:#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="headband" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3040"/>
+      <stop offset="100%" style="stop-color:#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="padGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2530"/>
+      <stop offset="100%" style="stop-color:#1a1520"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,43,214,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <ellipse cx="200" cy="240" rx="120" ry="30" fill="rgba(255,43,214,0.12)" filter="url(#glow)"/>
+
+  <!-- Gaming Headset -->
+  <g transform="translate(80, 30)">
+    <!-- Headband -->
+    <path d="M20 80 Q20 -10 120 -10 Q220 -10 220 80" 
+          fill="none" stroke="url(#headband)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M20 80 Q20 -10 120 -10 Q220 -10 220 80" 
+          fill="none" stroke="#3a4050" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Left earcup -->
+    <g transform="translate(0, 70)">
+      <!-- Outer ring -->
+      <ellipse cx="0" cy="50" rx="40" ry="50" fill="url(#earcup)" stroke="#4a5060" stroke-width="1"/>
+      <!-- Inner ring -->
+      <ellipse cx="0" cy="50" rx="28" ry="38" fill="#0f1218" stroke="#2a3040" stroke-width="1"/>
+      <!-- Ear pad -->
+      <ellipse cx="0" cy="50" rx="22" ry="30" fill="url(#padGrad)" stroke="#3a3540" stroke-width="0.5"/>
+      <!-- RGB ring -->
+      <ellipse cx="0" cy="50" rx="32" ry="42" fill="none" stroke="#ff2bd6" stroke-width="2" opacity="0.7" filter="url(#glow)"/>
+      <!-- Mesh pattern -->
+      <g stroke="rgba(255,43,214,0.15)" stroke-width="0.5">
+        <line x1="-18" y1="28" x2="18" y2="28"/>
+        <line x1="-20" y1="40" x2="20" y2="40"/>
+        <line x1="-20" y1="52" x2="20" y2="52"/>
+        <line x1="-20" y1="64" x2="20" y2="64"/>
+        <line x1="-18" y1="76" x2="18" y2="76"/>
+      </g>
+    </g>
+
+    <!-- Right earcup -->
+    <g transform="translate(240, 70)">
+      <ellipse cx="0" cy="50" rx="40" ry="50" fill="url(#earcup)" stroke="#4a5060" stroke-width="1"/>
+      <ellipse cx="0" cy="50" rx="28" ry="38" fill="#0f1218" stroke="#2a3040" stroke-width="1"/>
+      <ellipse cx="0" cy="50" rx="22" ry="30" fill="url(#padGrad)" stroke="#3a3540" stroke-width="0.5"/>
+      <ellipse cx="0" cy="50" rx="32" ry="42" fill="none" stroke="#ff2bd6" stroke-width="2" opacity="0.7" filter="url(#glow)"/>
+      <!-- Brand logo -->
+      <text x="0" y="55" font-family="monospace" font-size="14" fill="#ff2bd6" text-anchor="middle" opacity="0.8" font-weight="bold">NG</text>
+    </g>
+
+    <!-- Mic boom -->
+    <path d="M40 130 Q10 150 0 180" fill="none" stroke="#2a3040" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="182" r="6" fill="#1a1f2e" stroke="#ff2bd6" stroke-width="1" filter="url(#glow)"/>
+
+    <!-- Volume control on right cup -->
+    <circle cx="275" cy="100" r="4" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+
+    <!-- Brand text on headband -->
+    <text x="120" y="2" font-family="monospace" font-size="8" fill="#ff2bd6" opacity="0.5" text-anchor="middle" letter-spacing="2">NEXUS PRO</text>
+  </g>
+
+  <!-- Specs -->
+  <g font-family="monospace" font-size="9" fill="#ff2bd6" opacity="0.5">
+    <text x="30" y="60">53mm 驱动单元</text>
+    <text x="30" y="75">7.1 环绕声</text>
+    <text x="300" y="50">可拆卸麦克风</text>
+    <text x="300" y="65">RGB 灯效</text>
+  </g>
+
+  <!-- Audio wave animation -->
+  <g transform="translate(340, 180)" fill="#ff2bd6" opacity="0.4">
+    <rect x="0" y="10" width="3" height="10" rx="1">
+      <animate attributeName="height" values="10;20;10" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="10;5;10" dur="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="6" y="5" width="3" height="20" rx="1">
+      <animate attributeName="height" values="20;10;20" dur="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="5;10;5" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="12" y="8" width="3" height="14" rx="1">
+      <animate attributeName="height" values="14;22;14" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="8;3;8" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <circle cx="60" cy="220" r="2" fill="#ff2bd6" opacity="0.4">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

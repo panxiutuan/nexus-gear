@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#0f1218"/>
+    </linearGradient>
+    <linearGradient id="glassTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3545"/>
+      <stop offset="50%" style="stop-color:#1a2535"/>
+      <stop offset="100%" style="stop-color:#0f1825"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,180,0,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <ellipse cx="200" cy="230" rx="120" ry="25" fill="rgba(255,180,0,0.12)" filter="url(#glow)"/>
+
+  <!-- Glass Mousepad - top view -->
+  <g transform="translate(80, 60)">
+    <!-- Bottom base shadow -->
+    <ellipse cx="120" cy="175" rx="110" ry="10" fill="rgba(0,0,0,0.3)"/>
+    
+    <!-- Pad body with perspective -->
+    <rect x="5" y="5" width="230" height="170" rx="10" ry="10" fill="#0a0d12" stroke="#2a3040" stroke-width="1"/>
+    
+    <!-- Glass surface -->
+    <rect x="0" y="0" width="230" height="170" rx="10" ry="10" fill="url(#glassTop)" stroke="#4a5565" stroke-width="1.5"/>
+    
+    <!-- Glass reflection -->
+    <polygon points="0,0 80,0 0,60" fill="rgba(255,255,255,0.03)"/>
+    <polygon points="230,170 150,170 230,110" fill="rgba(255,255,255,0.02)"/>
+
+    <!-- Edge highlight -->
+    <rect x="2" y="2" width="226" height="166" rx="8" ry="8" fill="none" stroke="rgba(255,180,0,0.2)" stroke-width="1"/>
+
+    <!-- Center logo -->
+    <text x="115" y="90" font-family="monospace" font-size="20" fill="#ffb400" opacity="0.7" text-anchor="middle" letter-spacing="5" font-weight="bold">NG</text>
+    <text x="115" y="108" font-family="monospace" font-size="8" fill="#ffb400" opacity="0.4" text-anchor="middle" letter-spacing="2">GLASS PAD</text>
+
+    <!-- Corner accents -->
+    <circle cx="15" cy="15" r="2" fill="#ffb400" opacity="0.5" filter="url(#glow)"/>
+    <circle cx="215" cy="15" r="2" fill="#ffb400" opacity="0.5" filter="url(#glow)"/>
+    <circle cx="15" cy="155" r="2" fill="#ffb400" opacity="0.5" filter="url(#glow)"/>
+    <circle cx="215" cy="155" r="2" fill="#ffb400" opacity="0.5" filter="url(#glow)"/>
+
+    <!-- Size label -->
+    <text x="115" y="165" font-family="monospace" font-size="7" fill="#ffb400" opacity="0.3" text-anchor="middle">450 x 400 mm</text>
+  </g>
+
+  <!-- Mouse gliding on glass -->
+  <g transform="translate(150, 100)">
+    <ellipse cx="20" cy="42" rx="18" ry="4" fill="rgba(255,180,0,0.2)" filter="url(#glow)"/>
+    <path d="M3 25 Q3 3 20 -2 Q37 3 37 25 Q37 42 20 48 Q3 42 3 25Z" 
+          fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+    <line x1="20" y1="2" x2="20" y2="25" stroke="#1a1f2e" stroke-width="0.5"/>
+  </g>
+
+  <!-- Feature highlights -->
+  <g font-family="monospace" font-size="9" fill="#ffb400" opacity="0.5">
+    <text x="20" y="50">钢化玻璃表面</text>
+    <text x="20" y="65">极致顺滑手感</text>
+    <text x="20" y="80">易于清洁</text>
+    <text x="290" y="50">硅橡胶防滑底</text>
+    <text x="290" y="65">3.5mm 厚度</text>
+    <text x="290" y="80">圆角打磨</text>
+  </g>
+
+  <!-- Sparkle/glint effects -->
+  <circle cx="120" cy="120" r="1.5" fill="#fff" opacity="0.3">
+    <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="180" cy="80" r="1" fill="#fff" opacity="0.2">
+    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="90" cy="60" r="1" fill="#ffb400" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

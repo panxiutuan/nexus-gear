@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#0f1218"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4a5060"/>
+      <stop offset="50%" style="stop-color:#6a7080"/>
+      <stop offset="100%" style="stop-color:#4a5060"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(155,92,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <ellipse cx="200" cy="250" rx="100" ry="20" fill="rgba(155,92,255,0.1)" filter="url(#glow)"/>
+
+  <!-- Cable Comb Set -->
+  <g transform="translate(80, 50)">
+    <!-- Main cable comb - front view -->
+    <g transform="translate(60, 20)">
+      <!-- Body -->
+      <rect x="0" y="0" width="180" height="25" rx="4" fill="url(#metal)" stroke="#5a6070" stroke-width="1"/>
+      
+      <!-- Cable slots -->
+      <g fill="#0a0d12" stroke="#2a3040" stroke-width="0.5">
+        <rect x="8" y="5" width="16" height="15" rx="3"/>
+        <rect x="30" y="5" width="16" height="15" rx="3"/>
+        <rect x="52" y="5" width="16" height="15" rx="3"/>
+        <rect x="74" y="5" width="16" height="15" rx="3"/>
+        <rect x="96" y="5" width="16" height="15" rx="3"/>
+        <rect x="118" y="5" width="16" height="15" rx="3"/>
+        <rect x="140" y="5" width="16" height="15" rx="3"/>
+        <rect x="162" y="5" width="10" height="15" rx="3"/>
+      </g>
+
+      <!-- Cables in slots -->
+      <g>
+        <line x1="16" y1="25" x2="16" y2="100" stroke="#ff2bd6" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+        <line x1="38" y1="25" x2="38" y2="100" stroke="#39ff14" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+        <line x1="60" y1="25" x2="60" y2="100" stroke="#00e5ff" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+        <line x1="82" y1="25" x2="82" y2="100" stroke="#ffb400" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+        <line x1="104" y1="25" x2="104" y2="100" stroke="#9b5cff" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+        <line x1="126" y1="25" x2="126" y2="100" stroke="#ff5470" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+        <line x1="148" y1="25" x2="148" y2="100" stroke="#e8e8e8" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+      </g>
+
+      <!-- Brand engraving -->
+      <text x="90" y="17" font-family="monospace" font-size="6" fill="#9b5cff" opacity="0.6" text-anchor="middle" letter-spacing="1">NEXUS</text>
+    </g>
+
+    <!-- Second comb (smaller, angled) -->
+    <g transform="translate(10, 150) rotate(-15)">
+      <rect x="0" y="0" width="120" height="20" rx="3" fill="url(#metal)" stroke="#5a6070" stroke-width="1"/>
+      <g fill="#0a0d12" stroke="#2a3040" stroke-width="0.5">
+        <rect x="6" y="4" width="12" height="12" rx="2"/>
+        <rect x="22" y="4" width="12" height="12" rx="2"/>
+        <rect x="38" y="4" width="12" height="12" rx="2"/>
+        <rect x="54" y="4" width="12" height="12" rx="2"/>
+        <rect x="70" y="4" width="12" height="12" rx="2"/>
+        <rect x="86" y="4" width="12" height="12" rx="2"/>
+        <rect x="102" y="4" width="12" height="12" rx="2"/>
+      </g>
+    </g>
+
+    <!-- Third comb (clip style) -->
+    <g transform="translate(230, 160) rotate(20)">
+      <rect x="0" y="0" width="60" height="15" rx="2" fill="url(#metal)" stroke="#5a6070" stroke-width="0.8"/>
+      <g fill="#0a0d12" stroke="#2a3040" stroke-width="0.5">
+        <rect x="4" y="3" width="8" height="9" rx="1.5"/>
+        <rect x="16" y="3" width="8" height="9" rx="1.5"/>
+        <rect x="28" y="3" width="8" height="9" rx="1.5"/>
+        <rect x="40" y="3" width="8" height="9" rx="1.5"/>
+      </g>
+    </g>
+
+    <!-- Mounting clip -->
+    <g transform="translate(250, 80)">
+      <rect x="0" y="0" width="20" height="30" rx="3" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+      <rect x="5" y="5" width="10" height="20" rx="2" fill="#0a0d12"/>
+      <circle cx="10" cy="28" r="2" fill="#9b5cff" opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- Set contents list -->
+  <g transform="translate(20, 200)" font-family="monospace" font-size="8" fill="#9b5cff" opacity="0.5">
+    <text x="0" y="0">套装包含：</text>
+    <text x="10" y="14">× 3 理线梳</text>
+    <text x="10" y="26">× 6 固定夹</text>
+    <text x="10" y="38">× 10 魔术贴</text>
+  </g>
+
+  <g transform="translate(280, 200)" font-family="monospace" font-size="8" fill="#9b5cff" opacity="0.5">
+    <text x="0" y="0">材质：铝合金</text>
+    <text x="0" y="14">槽数：7 / 8 / 12</text>
+    <text x="0" y="26">适用：3-8mm 线缆</text>
+  </g>
+
+  <!-- Title -->
+  <text x="200" y="40" font-family="monospace" font-size="11" fill="#9b5cff" opacity="0.6" text-anchor="middle" letter-spacing="2">NEXUS CABLE COMB</text>
+
+  <circle cx="50" cy="100" r="2" fill="#9b5cff" opacity="0.4">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="120" r="1.5" fill="#9b5cff" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

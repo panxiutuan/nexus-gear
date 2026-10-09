@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#0f1218"/>
+    </linearGradient>
+    <linearGradient id="mouseBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3040"/>
+      <stop offset="50%" style="stop-color:#202533"/>
+      <stop offset="100%" style="stop-color:#151820"/>
+    </linearGradient>
+    <linearGradient id="mouseTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a4050"/>
+      <stop offset="100%" style="stop-color:#2a3040"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,229,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <!-- Glow under mouse -->
+  <ellipse cx="200" cy="230" rx="100" ry="25" fill="rgba(0,229,255,0.2)" filter="url(#glow)"/>
+
+  <!-- Mouse - top down isometric view -->
+  <g transform="translate(130, 50)">
+    <!-- Mouse body shadow -->
+    <ellipse cx="70" cy="200" rx="55" ry="10" fill="rgba(0,0,0,0.4)"/>
+    
+    <!-- Mouse body -->
+    <path d="M15 100 Q15 30 70 20 Q125 30 125 100 Q125 170 70 190 Q15 170 15 100Z" 
+          fill="url(#mouseBody)" stroke="#3a4050" stroke-width="1"/>
+
+    <!-- Left button -->
+    <path d="M20 95 Q20 40 65 30 L65 95 Q45 100 20 95Z" 
+          fill="url(#mouseTop)" stroke="#3a4050" stroke-width="0.5"/>
+    
+    <!-- Right button -->
+    <path d="M75 30 Q120 40 120 95 Q95 100 75 95Z" 
+          fill="url(#mouseTop)" stroke="#3a4050" stroke-width="0.5"/>
+
+    <!-- Scroll wheel -->
+    <rect x="62" y="50" width="16" height="28" rx="4" fill="#1a1f2e" stroke="#3a4050" stroke-width="0.5"/>
+    <rect x="64" y="54" width="12" height="4" rx="1" fill="#3a4050"/>
+    <rect x="64" y="62" width="12" height="4" rx="1" fill="#3a4050"/>
+    <rect x="64" y="70" width="12" height="4" rx="1" fill="#3a4050"/>
+
+    <!-- RGB strip on bottom -->
+    <ellipse cx="70" cy="188" rx="50" ry="6" fill="rgba(0,229,255,0.6)" filter="url(#glow)"/>
+
+    <!-- Honeycomb pattern on sides (lightweight) -->
+    <g fill="none" stroke="rgba(0,229,255,0.15)" stroke-width="0.5">
+      <circle cx="30" cy="120" r="3"/>
+      <circle cx="45" cy="115" r="3"/>
+      <circle cx="38" cy="135" r="3"/>
+      <circle cx="25" cy="150" r="3"/>
+      <circle cx="48" cy="150" r="3"/>
+      <circle cx="95" cy="115" r="3"/>
+      <circle cx="110" cy="120" r="3"/>
+      <circle cx="102" cy="135" r="3"/>
+      <circle cx="92" cy="150" r="3"/>
+      <circle cx="115" cy="150" r="3"/>
+    </g>
+
+    <!-- Side buttons -->
+    <rect x="16" y="110" width="6" height="15" rx="2" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+    <rect x="16" y="130" width="6" height="15" rx="2" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+
+    <!-- Brand text on back -->
+    <text x="70" y="175" font-family="monospace" font-size="7" fill="#00e5ff" opacity="0.6" text-anchor="middle" letter-spacing="1">NEXUS AIR 58</text>
+
+    <!-- Weight indicator -->
+    <text x="70" y="220" font-family="monospace" font-size="11" fill="#00e5ff" opacity="0.8" text-anchor="middle">58g</text>
+  </g>
+
+  <!-- Floating specs -->
+  <g font-family="monospace" font-size="10" fill="#00e5ff" opacity="0.5">
+    <text x="50" y="80">26K DPI</text>
+    <text x="300" y="100">650 IPS</text>
+    <text x="280" y="220">POLLING 1000Hz</text>
+  </g>
+
+  <!-- Particles -->
+  <circle cx="60" cy="200" r="2" fill="#00e5ff" opacity="0.4">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="340" cy="150" r="1.5" fill="#00e5ff" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

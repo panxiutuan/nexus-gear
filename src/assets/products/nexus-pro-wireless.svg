@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#0f1218"/>
+    </linearGradient>
+    <linearGradient id="mouseBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3040"/>
+      <stop offset="50%" style="stop-color:#202533"/>
+      <stop offset="100%" style="stop-color:#151820"/>
+    </linearGradient>
+    <linearGradient id="mouseTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a4050"/>
+      <stop offset="100%" style="stop-color:#2a3040"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,229,255,0.05)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <ellipse cx="200" cy="240" rx="110" ry="30" fill="rgba(0,229,255,0.15)" filter="url(#glow)"/>
+
+  <!-- Ergonomic wireless mouse -->
+  <g transform="translate(110, 40)">
+    <!-- Shadow -->
+    <ellipse cx="80" cy="210" rx="65" ry="12" fill="rgba(0,0,0,0.4)"/>
+    
+    <!-- Mouse body - ergonomic shape -->
+    <path d="M10 110 Q10 25 80 15 Q150 25 150 110 Q150 185 80 200 Q10 185 10 110Z" 
+          fill="url(#mouseBody)" stroke="#3a4050" stroke-width="1"/>
+
+    <!-- Thumb rest (left side) -->
+    <path d="M10 110 Q5 140 15 170 Q25 180 35 175 Q20 150 20 120Z" 
+          fill="#1a1f2e" stroke="#2a3040" stroke-width="0.5"/>
+
+    <!-- Left button -->
+    <path d="M20 100 Q20 35 75 25 L75 100 Q50 105 20 100Z" 
+          fill="url(#mouseTop)" stroke="#3a4050" stroke-width="0.5"/>
+    
+    <!-- Right button -->
+    <path d="M85 25 Q140 35 140 100 Q110 105 85 100Z" 
+          fill="url(#mouseTop)" stroke="#3a4050" stroke-width="0.5"/>
+
+    <!-- Scroll wheel -->
+    <rect x="70" y="45" width="20" height="32" rx="5" fill="#1a1f2e" stroke="#3a4050" stroke-width="0.5"/>
+    <rect x="72" y="50" width="16" height="5" rx="1" fill="#3a4050"/>
+    <rect x="72" y="60" width="16" height="5" rx="1" fill="#3a4050"/>
+    <rect x="72" y="70" width="16" height="5" rx="1" fill="#3a4050"/>
+
+    <!-- DPI button behind wheel -->
+    <circle cx="80" cy="92" r="5" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+    <text x="80" y="95" font-family="monospace" font-size="6" fill="#00e5ff" text-anchor="middle">DPI</text>
+
+    <!-- Side buttons -->
+    <rect x="12" y="120" width="8" height="18" rx="3" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+    <rect x="12" y="145" width="8" height="18" rx="3" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+
+    <!-- RGB bottom glow -->
+    <ellipse cx="80" cy="198" rx="58" ry="7" fill="rgba(0,229,255,0.5)" filter="url(#glow)"/>
+
+    <!-- Wireless receiver icon -->
+    <g transform="translate(170, 100)">
+      <rect x="0" y="0" width="20" height="8" rx="2" fill="#2a3040" stroke="#3a4050" stroke-width="0.5"/>
+      <circle cx="15" cy="4" r="2" fill="#00e5ff" opacity="0.8">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="180" y="125" font-family="monospace" font-size="7" fill="#00e5ff" opacity="0.5">2.4G</text>
+
+    <!-- Brand -->
+    <text x="80" y="185" font-family="monospace" font-size="8" fill="#00e5ff" opacity="0.6" text-anchor="middle" letter-spacing="1">NEXUS PRO WIRELESS</text>
+  </g>
+
+  <!-- Specs -->
+  <g font-family="monospace" font-size="9" fill="#00e5ff" opacity="0.5">
+    <text x="30" y="70">26K DPI</text>
+    <text x="30" y="85">80h 续航</text>
+    <text x="300" y="60">无线 2.4G</text>
+    <text x="300" y="75">Type-C 充电</text>
+  </g>
+
+  <circle cx="50" cy="200" r="2" fill="#00e5ff" opacity="0.4">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="350" cy="180" r="1.5" fill="#00e5ff" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
