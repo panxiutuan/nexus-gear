@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProductsView from '../views/ProductsView.vue'
 import ProductDetailView from '../views/ProductDetailView.vue'
@@ -74,7 +74,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  // 使用 hash 模式：GitHub Pages 静态托管下刷新子路由不会 404
+  history: createWebHashHistory(),
   routes,
   scrollBehavior() {
     return { top: 0 }
